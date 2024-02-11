@@ -1,11 +1,16 @@
 package programs;
 
 public class Access {
+public static void main(String[] args) {
 
-	public static void main(String[] args) {
-	System.out.print("Let us do thia thing right ...fffsfsdfs................1233444444");
-		
+		int counter = 1;
 
+		do {
+			System.out.println("Count is: " + counter);
+			counter++;
+		} while (counter <= 10);
 	}
+	// TODO Auto-generated method stub
+
 
 }
