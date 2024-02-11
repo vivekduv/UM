@@ -3,7 +3,7 @@ package programs;
 public class Access {
 
 	public static void main(String[] args) {
-	System.out.print("FSFSFSFSFSFSD");
+	System.out.print("Let us do right");
 		
 
 	}
