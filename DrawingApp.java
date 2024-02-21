@@ -4,6 +4,50 @@ import java.util.Random;
 
 public class DrawingApp {
 
+     public static String getFlag2(int size,char color1, char color2 , char color3) {
+        String flag = "";
+        int maxColumns = size * 5;
+        int maxRows = size;
+
+        for (int currentRow = 0; currentRow < maxRows; currentRow++) {
+            for (int currentColumn = 0; currentColumn < maxColumns; currentColumn++) {
+
+                if (currentColumn <= currentRow) {
+                    flag += color1;
+                } else if (currentRow == 0 && currentColumn > 0){
+                    flag += color2;
+                }
+                else if (currentRow == maxRows-1 && currentColumn > maxRows-1){
+                    flag += color2;
+                }
+                else {
+                    flag += color3;
+                }
+            }
+            flag += '\n';
+        }
+
+        for (int lastRowIndex = maxRows - 1; lastRowIndex >= 0; lastRowIndex--) {
+            for (int currentColumn = 0; currentColumn < maxColumns; currentColumn++) {
+                if (currentColumn <= lastRowIndex) {
+                    flag += color1;
+                } else if (lastRowIndex==maxRows-1 && lastRowIndex < currentColumn ){
+
+                    flag += color2;
+                }
+                else if (lastRowIndex==0 && currentColumn < maxColumns) {
+                    flag += color2;
+                }
+                else {
+                    flag += color3;
+                }
+            }
+            if (lastRowIndex>0)
+                flag += '\n';
+        }
+        return flag;
+    }
+
     private static boolean isValidColor(char color) {
 
         if (color == 'R' || color == 'G' || color == 'B' || color == 'Y' || color == '*' || color == '.') {
